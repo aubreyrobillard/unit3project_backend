@@ -2,7 +2,7 @@
 
 
 - ****
-- **Aubrey Robillard**
+- **Tech-Lead Aubrey Robillard**
 - [**LINK TO GITHUB**](github link)
 - [**LINK TO DEPLOYED WEBSITE**](render link)
 - **List of technologies used: **
@@ -20,7 +20,7 @@
 ## List of Backend Endpoints:
 
 | ENDPOINT | METHOD | PURPOSE |
-|----------|--------|---------|
+| -------- | ------ | ------- |
 |          |        |         |
 
 
