@@ -60,9 +60,14 @@ Happy cooking with Taste Tally! Create, savor, and share your culinary wonders l
 
 ## List of Backend Endpoints:
 
-| ENDPOINT | METHOD | PURPOSE |
-| -------- | ------ | ------- |
-|          |        |         |
+| ENDPOINT                     | METHOD | PURPOSE                 |
+| ---------------------------- | ------ | ----------------------- |
+| /                            | POST   | Login Page              |
+| /register                    | POST   | Register Page           |
+| /tastetally/recipes          | GET    | List of recipes         |
+| /tastetally/recipe/id:       | GET    | Specific recipe Details |
+| /tastetally/recipe/id:/edit? | POST   | Edit recipe             |
+| /tastetally/newrecipe        | POST   | Add New recipe To List  |
 
 ## ERD (entitity relationship diagram):
 
