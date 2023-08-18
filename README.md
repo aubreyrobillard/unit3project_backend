@@ -67,6 +67,7 @@ Happy cooking with Taste Tally! Create, savor, and share your culinary wonders l
 ## ERD (entitity relationship diagram):
 
 ![ERD](/images/TasteTallyERD.png)
+
 made with https://lucid.app.com
 
 ## Future Enhancements:
