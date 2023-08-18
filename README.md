@@ -1,14 +1,11 @@
 # Taste Tally App
 
-
-- ****
 - **Tech-Lead Aubrey Robillard**
 - [**LINK TO BACKEND GITHUB**](https://github.com/aubreyrobillard/unit3project_backend)
 - [**LINK TO BACKEND GITHUB**](https://github.com/aubreyrobillard/unit3project_frontend)
 - [**LINK TO DEPLOYED WEBSITE**](render link)
 - **List of technologies used:**
 - [**LINK TO TRELLO**](https://trello.com/b/YqpBoM4H/unit-3-project)
-
 
 ## About Taste Tally App
 
@@ -42,29 +39,31 @@ Welcome to Taste Tally, your ultimate companion for organizing and managing your
 
 ## Contributions and Feedback
 
-Contributions are welcome! If you have any suggestions, bug reports, or improvements, feel free to [open an issue](link_to_issues) or [submit a pull request](link_to_pull_requests). We believe in continuous improvement and value your input.
+Contributions are welcome! If you have any suggestions, bug reports, or improvements, feel free to [open an issue](https://github.com/aubreyrobillard/unit3project_backend/issues) or [submit a pull request](https://github.com/aubreyrobillard/unit3project_backend/pulls). We believe in continuous improvement and value your input.
 
 ## About the Developer
 
-Taste Tally is developed and maintained by [Your Name]. As an avid food enthusiast and tech aficionado, I wanted to create a tool that seamlessly blends the joy of cooking with modern technology. This project is a labor of love, and I hope it brings as much joy to your kitchen as it did to mine.
+Taste Tally is a collaborative creation brought to life by three passionate developers: Aubrey Robillard, Taylor Murdock, and Bijay Kadariya. We embarked on this culinary journey during a software engineering bootcamp, where we joined forces to develop a recipe app that seamlessly blends the joy of cooking with modern technology. With diverse skills and a shared love for both coding and cooking, we've crafted Taste Tally to be an exceptional tool for everyone who appreciates the art of gastronomy.
+
+- [Aubrey Robillard](https://www.linkedin.com/in/aubreyrobillard/)
+- [Taylor Murdock](https://www.linkedin.com/in/taylor-murdock/)
+- [Bijay Kadariya](https://www.linkedin.com/in/bijay-kadariya-212a11247/)
+
+Connect with us on LinkedIn to learn more about our backgrounds and stay updated on our latest projects!
 
 ---
 
 Happy cooking with Taste Tally! Create, savor, and share your culinary wonders like never before.
 
-
 ## Mock Up of UI:
 
 - ![Wireframe](photo link)
-
 
 ## List of Backend Endpoints:
 
 | ENDPOINT | METHOD | PURPOSE |
 | -------- | ------ | ------- |
 |          |        |         |
-
-
 
 ## ERD (entitity relationship diagram):
 
