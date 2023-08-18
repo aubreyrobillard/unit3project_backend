@@ -1,11 +1,10 @@
 # Taste Tally App
 
-- **Tech-Lead Aubrey Robillard**
 - [**LINK TO BACKEND GITHUB**](https://github.com/aubreyrobillard/unit3project_backend)
 - [**LINK TO BACKEND GITHUB**](https://github.com/aubreyrobillard/unit3project_frontend)
 - [**LINK TO DEPLOYED WEBSITE**](render link)
-- **List of technologies used:**
 - [**LINK TO TRELLO**](https://trello.com/b/YqpBoM4H/unit-3-project)
+- **List of technologies used:**
 
 ## About Taste Tally App
 
@@ -43,7 +42,7 @@ Contributions are welcome! If you have any suggestions, bug reports, or improvem
 
 ## About the Developer
 
-Taste Tally is a collaborative creation brought to life by three passionate developers: Aubrey Robillard, Taylor Murdock, and Bijay Kadariya. We embarked on this culinary journey during a software engineering bootcamp, where we joined forces to develop a recipe app that seamlessly blends the joy of cooking with modern technology. With diverse skills and a shared love for both coding and cooking, we've crafted Taste Tally to be an exceptional tool for everyone who appreciates the art of gastronomy.
+Taste Tally is a collaborative creation brought to life by three passionate developers: Aubrey Robillard (Tech-Lead), Taylor Murdock, and Bijay Kadariya. We embarked on this culinary journey during a software engineering bootcamp, where we joined forces to develop a recipe app that seamlessly blends the joy of cooking with modern technology. With diverse skills and a shared love for both coding and cooking, we've crafted Taste Tally to be an exceptional tool for everyone who appreciates the art of gastronomy.
 
 - [Aubrey Robillard](https://www.linkedin.com/in/aubreyrobillard/)
 - [Taylor Murdock](https://www.linkedin.com/in/taylor-murdock/)
@@ -67,6 +66,7 @@ Happy cooking with Taste Tally! Create, savor, and share your culinary wonders l
 
 ## ERD (entitity relationship diagram):
 
-![picture of ERD](photo link)
+![picture of ERD](/project/unit3project_backend/images/TasteTallyERD.png)
+made with https://lucid.app.com
 
 ## Future Enhancements:
