@@ -4,7 +4,7 @@
 - [**LINK TO BACKEND GITHUB**](https://github.com/aubreyrobillard/unit3project_frontend)
 - [**LINK TO DEPLOYED WEBSITE**](render link)
 - [**LINK TO TRELLO**](https://trello.com/b/YqpBoM4H/unit-3-project)
-- **List of technologies used:**
+**List of technologies used:**
 - React, JavaScript, Sass, MongoDB
 
 ## About Taste Tally App
