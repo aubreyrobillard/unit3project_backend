@@ -52,7 +52,7 @@ app.get("/", async(req, res)=>{
         res.status(400).json(error)
     }
 })
-// CREATE ROUTE: POST: /
+// CREATE ROUTE: POST: "/""
 app.post("/", async (req,res)=>{
     try{
         // create recipe:
@@ -64,16 +64,29 @@ app.post("/", async (req,res)=>{
         res.status(400).json(error)
     }
 })
-//SHOW ROUTE: GET:
+//SHOW ROUTE: GET: "/"
 app.get("/:id", async(req, res)=>{
     try{
-        id = params.id
+        id = req.params.id
         // get a Recipe from DataBase
         const recipe = await Recipe.findById(id)
         // return a recipe as Json
         res.json(recipe)
     }
-    catch(erro){
+    catch(error){
+        res.status(400).json(error)
+    }
+})
+
+//Update Route: PUT: "/:id:
+app.put("/:id", async (req, res)=>{
+    try{
+        // update the person
+        const recipe= await Recipe.findByIdAndUpdate(req.params.id, req.body,{new: true})
+        // send the updated recipe as json
+        res.json(recipe)
+    }
+    catch(error){
         res.status(400).json(error)
     }
 })
