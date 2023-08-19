@@ -43,11 +43,22 @@ app.use(express.json())
 /////////////////////////////////////////////////////////////////ROUTES 
 
 // INDEX: get:
+app.get("/", async(req, res)=>{
+    try{
+        const recipies = await Recipe.find({})
+        res.json (recipies)
+
+    }
+
+    catch(error){
+        res.status(400).json(error)
+    }
+})
 
 // test Routes
-app.get("/", (req, res)=>{
-    res.json({hello:"worlOfZombies"})
-})
+// app.get("/", (req, res)=>{
+//     res.json({hello:"worlOfZombies"})
+// })
 
 
 //////////////////////////////////////////////////////////////// Server PORT:
