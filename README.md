@@ -5,6 +5,7 @@
 - [**LINK TO DEPLOYED WEBSITE**](render link)
 - [**LINK TO TRELLO**](https://trello.com/b/YqpBoM4H/unit-3-project)
 - **List of technologies used:**
+- React, JavaScript, Sass, MongoDB
 
 ## About Taste Tally App
 
