@@ -64,6 +64,19 @@ app.post("/", async (req,res)=>{
         res.status(400).json(error)
     }
 })
+//SHOW ROUTE: GET:
+app.get("/:id", async(req, res)=>{
+    try{
+        id = params.id
+        // get a Recipe from DataBase
+        const recipe = await Recipe.findById(id)
+        // return a recipe as Json
+        res.json(recipe)
+    }
+    catch(erro){
+        res.status(400).json(error)
+    }
+})
 
 // test Routes
 // app.get("/", (req, res)=>{
