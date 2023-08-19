@@ -43,11 +43,66 @@ app.use(express.json())
 /////////////////////////////////////////////////////////////////ROUTES 
 
 // INDEX: get:
-
-// test Routes
-app.get("/", (req, res)=>{
-    res.json({hello:"worlOfZombies"})
+app.get("/", async(req, res)=>{
+    try{
+        const recipies = await Recipe.find({})
+        res.json (recipies)
+    }
+    catch(error){
+        res.status(400).json({error})
+    }
 })
+// CREATE ROUTE: POST: "/""
+app.post("/", async (req,res)=>{
+    try{
+        // create recipe:
+        const recipe = await Recipe.create(req.body)
+        // send created recipe:
+        res.json(recipe)
+    }
+    catch(error){
+        res.status(400).json({error})
+    }
+})
+//SHOW ROUTE: GET: "/"
+app.get("/:id", async(req, res)=>{
+    try{
+        id = req.params.id
+        // get a Recipe from DataBase
+        const recipe = await Recipe.findById(id)
+        // return a recipe as Json
+        res.json(recipe)
+    }
+    catch(error){
+        res.status(400).json({error})
+    }
+})
+
+//Update Route: PUT: "/:id:
+app.put("/:id", async (req, res)=>{
+    try{
+        // update the person
+        const recipe= await Recipe.findByIdAndUpdate(req.params.id, req.body,{new: true})
+        // send the updated recipe as json
+        res.json(recipe)
+    }
+    catch(error){
+        res.status(400).json({error})
+    }
+})
+
+// DESTROY-> DELETE - /:id - delete a Individual Recipe:
+app.delete("/:id", async (req, res)=>{
+    try{
+        const recipe = await Recipe.findByIdAndDelete(req.params.id)
+        // send deleted recipe as Json
+        res.status(400).json(recipe)
+    }
+    catch(error){
+        res.status(204).json({error})
+    }
+})
+
 
 
 //////////////////////////////////////////////////////////////// Server PORT:
