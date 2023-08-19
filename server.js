@@ -105,12 +105,6 @@ app.delete("/:id", async (req, res)=>{
 
 
 
-// test Routes
-// app.get("/", (req, res)=>{
-//     res.json({hello:"worlOfZombies"})
-// })
-
-
 //////////////////////////////////////////////////////////////// Server PORT:
 app.listen(PORT, ()=>{
     console.log(`lsitenting to port ${PORT}`);
