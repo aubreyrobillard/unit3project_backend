@@ -56,8 +56,8 @@ Happy cooking with Taste Tally! Create, savor, and share your culinary wonders l
 
 ## Mock Up of UI:
 
-- ![Wireframe](/images/MockUp.png)
-- Preview our app here! https://app.uizard.io/p/acad9e5d
+![Wireframe](/images/MockUp.png)
+Preview our app here! https://app.uizard.io/p/acad9e5d
 
 ## List of Backend Endpoints:
 
