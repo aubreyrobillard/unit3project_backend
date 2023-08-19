@@ -49,7 +49,7 @@ app.get("/", async(req, res)=>{
         res.json (recipies)
     }
     catch(error){
-        res.status(400).json(error)
+        res.status(400).json({error})
     }
 })
 // CREATE ROUTE: POST: "/""
@@ -61,7 +61,7 @@ app.post("/", async (req,res)=>{
         res.json(recipe)
     }
     catch(error){
-        res.status(400).json(error)
+        res.status(400).json({error})
     }
 })
 //SHOW ROUTE: GET: "/"
@@ -74,7 +74,7 @@ app.get("/:id", async(req, res)=>{
         res.json(recipe)
     }
     catch(error){
-        res.status(400).json(error)
+        res.status(400).json({error})
     }
 })
 
@@ -87,9 +87,23 @@ app.put("/:id", async (req, res)=>{
         res.json(recipe)
     }
     catch(error){
-        res.status(400).json(error)
+        res.status(400).json({error})
     }
 })
+
+// DESTROY-> DELETE - /:id - delete a Individual Recipe:
+app.delete("/:id", async (req, res)=>{
+    try{
+        const recipe = await Recipe.findByIdAndDelete(req.params.id)
+        // send deleted recipe as Json
+        res.status(400).json(recipe)
+    }
+    catch(error){
+        res.status(204).json({error})
+    }
+})
+
+
 
 // test Routes
 // app.get("/", (req, res)=>{
