@@ -1,1 +1,14 @@
 git push origin main
+1. Created a Model
+2. Created a DatabaseConnection
+3. Created a Express Server
+4. Middleware Setup
+
+/////////////////////////////////////Routes://////////////////////////////////////
+For backEnd we dont need all those routes:INDUCES:👍
+We just need 5 routes:
+I:Index
+D:Delete
+U:Update 
+C:Create
+S:Show
