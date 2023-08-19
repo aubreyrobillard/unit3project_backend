@@ -47,9 +47,19 @@ app.get("/", async(req, res)=>{
     try{
         const recipies = await Recipe.find({})
         res.json (recipies)
-
     }
-
+    catch(error){
+        res.status(400).json(error)
+    }
+})
+// CREATE ROUTE: POST: /
+app.post("/", async (req,res)=>{
+    try{
+        // create recipe:
+        const recipe = await Recipe.create(req.body)
+        // send created recipe:
+        res.json(recipe)
+    }
     catch(error){
         res.status(400).json(error)
     }
