@@ -92,6 +92,7 @@ app.get("/", authCheck, async(req, res)=>{
     }
     catch(error){
         res.status(400).json({error})
+        res.send('line 95 backend')
     }
 })
 // CREATE ROUTE: POST: "/""
