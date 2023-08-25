@@ -15,6 +15,7 @@ const morgan = require("morgan")
 const bcrypt = require('bcryptjs')
 // jsonwebtoken for json reading
 const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
 
 //////////////////////////////////////////////////////////////////Database connection 
 mongoose.connect(MONGODB_URL)
@@ -185,7 +186,7 @@ app.post('/login', async (req, res) => {
         // send a response with a cookie that includes the token
         res.cookie("token", token, {
             // only accessed by server requests
-            httpOnly:true,
+            httpOnly: true,
             //path = where the cookie is valid
             path: '/',
             //domain = what domain the cookie is valid on
