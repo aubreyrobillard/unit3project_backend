@@ -74,7 +74,7 @@ async function authCheck(req, res, next){
 //////////////////////////////////////////////////////////////////MIDDLEWARE:
 // use cors:
 app.use(cors({
-    origin: "http://localhost:3333",
+    origin: "http://localhost:3000",
     credentials: true,
 }))
 // use morgan:
