@@ -22,8 +22,8 @@ mongoose.connect(MONGODB_URL)
 
 //////////////////////////////////////////////////////////////////connectionEvent:
 mongoose.connection
-.on("open", ()=>console.log("conected to Mongooes"))
-.on("close", ()=>console.log("Disconected to Mongooes"))
+.on("open", ()=>console.log("conected to Mongoose"))
+.on("close", ()=>console.log("Disconected to Mongoose"))
 .on("error", (error)=>console.log(error))
 
 //////////////////////////////////////////////////////////////////MODELS
@@ -87,8 +87,8 @@ app.use(cookieParser());
 // INDEX: get:
 app.get("/", authCheck, async(req, res)=>{
     try{
-        const recipies = await Recipe.find({})
-        res.json (recipies)
+        const recipes = await Recipe.find({username: req.payload.username})
+        res.json (recipes)
     }
     catch(error){
         res.status(400).json({error})
@@ -97,12 +97,13 @@ app.get("/", authCheck, async(req, res)=>{
 // CREATE ROUTE: POST: "/""
 app.post("/", authCheck, async (req,res)=>{
     try{
+        // add username to recipe body
+        req.body.username = req.payload.username;
         // create recipe:
         const recipe = await Recipe.create(req.body)
         // send created recipe:
         res.json(recipe)
-    }
-    catch(error){
+    } catch(error){
         res.status(400).json({error})
     }
 })
@@ -138,10 +139,10 @@ app.delete("/:id", authCheck, async (req, res)=>{
     try{
         const recipe = await Recipe.findByIdAndDelete(req.params.id)
         // send deleted recipe as Json
-        res.status(400).json(recipe)
+        res.status(204).json(recipe)
     }
     catch(error){
-        res.status(204).json({error})
+        res.status(400).json({error})
     }
 })
 
