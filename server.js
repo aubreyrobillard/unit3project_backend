@@ -8,7 +8,7 @@ const app = express();
 // import mongoose:
 const mongoose = require("mongoose");
 // import cors"
-const cors = require("cors");
+// const cors = require("cors");
 //import morgan:
 const morgan = require("morgan");
 // bcrypt for password
@@ -68,13 +68,7 @@ const Recipe = mongoose.model("Recipe", recipeSchema);
 // }
 
 //////////////////////////////////////////////////////////////////MIDDLEWARE:
-// use cors:
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
-);
+
 // use morgan:
 app.use(morgan("dev"));
 // express functionality to recognize incoming request object as JSON objects:
