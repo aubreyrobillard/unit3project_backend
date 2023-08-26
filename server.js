@@ -1,36 +1,36 @@
 ///////////////////////////////////////////////////////////// import our dependecies:
 require("dotenv").config();
-const {PORT = 8000, MONGODB_URL} = process.env
+const { PORT = 8000, MONGODB_URL } = process.env;
 // import express:
-const express = require('express')
+const express = require("express");
 // create application object:
-const app = express()
+const app = express();
 // import mongoose:
-const mongoose= require("mongoose")
+const mongoose = require("mongoose");
 // import cors"
-// const cors = require("cors")
+// const cors = require("cors");
 //import morgan:
-const morgan = require("morgan")
+const morgan = require("morgan");
 // bcrypt for password
 // const bcrypt = require('bcryptjs')
 // // jsonwebtoken for json reading
 // const jwt = require('jsonwebtoken')
 // const cookieParser = require('cookie-parser')
 
-//////////////////////////////////////////////////////////////////Database connection 
-mongoose.connect(MONGODB_URL)
+//////////////////////////////////////////////////////////////////Database connection
+mongoose.connect(MONGODB_URL);
 
 //////////////////////////////////////////////////////////////////connectionEvent:
 mongoose.connection
-.on("open", ()=>console.log("conected to Mongoose"))
-.on("close", ()=>console.log("Disconected to Mongoose"))
-.on("error", (error)=>console.log(error))
+  .on("open", () => console.log("conected to Mongoose"))
+  .on("close", () => console.log("Disconected to Mongoose"))
+  .on("error", (error) => console.log(error));
 
 //////////////////////////////////////////////////////////////////MODELS
 
 // const UserSchema = new mongoose.Schema({
 //     username: {
-//         type: String, unique: true, required: true 
+//         type: String, unique: true, required: true
 //     },
 //     password: {
 //         type: String, required: true
@@ -39,19 +39,17 @@ mongoose.connection
 
 // const User = mongoose.model('User', UserSchema);
 
-
-
 const recipeSchema = new mongoose.Schema({
-    name:String,
-    image:String,
-    ingredients:String,
-    instructions:String,
-    prepTime:String,
-    cookingTime:String,
-    author:String,
-    star: String})
-const Recipe = mongoose.model("Recipe", recipeSchema)
-
+  name: String,
+  image: String,
+  ingredients: String,
+  instructions: String,
+  prepTime: String,
+  cookingTime: String,
+  author: String,
+  star: Number,
+});
+const Recipe = mongoose.model("Recipe", recipeSchema);
 
 ////////////////////////////////////////////////////////////AUTH MIDDLEWARE:
 // async function authCheck(req, res, next){
@@ -69,8 +67,6 @@ const Recipe = mongoose.model("Recipe", recipeSchema)
 //     }
 // }
 
-
-
 //////////////////////////////////////////////////////////////////MIDDLEWARE:
 
 // use morgan:
@@ -78,71 +74,73 @@ app.use(morgan("dev"));
 // express functionality to recognize incoming request object as JSON objects:
 app.use(express.json());
 // app.use(cookieParser());
-/////////////////////////////////////////////////////////////////ROUTES 
+/////////////////////////////////////////////////////////////////ROUTES
 
 // INDEX: get:
-app.get("/", async(req, res)=>{
-    try{
-        const recipes = await Recipe.find({})
-        res.json (recipes)
-    }
-    catch(error){
-        res.status(400).json({error})
-        // res.send('line 95 backend')
-    }
-})
+app.get("/", async (req, res) => {
+  try {
+    const recipes = await Recipe.find({});
+    res.json(recipes);
+  } catch (error) {
+    res.status(400).json({ error });
+    // res.send('line 95 backend')
+  }
+});
+
 // CREATE ROUTE: POST: "/""
-app.post("/", async (req,res)=>{
-    try{
-        // add username to recipe body
-        // req.body.username = req.payload.username;
-        // create recipe:
-        const recipe = await Recipe.create(req.body)
-        // send created recipe:
-        res.json(recipe)
-    } catch(error){
-        res.status(400).json({error})
-    }
-})
+app.post("/", async (req, res) => {
+  try {
+    const recipeData = req.body;
+    console.log(recipeData);
+    // Ensure star is parsed as a number
+    recipeData.star = recipeData.star;
+
+    console.log(recipeData.star);
+
+    const recipe = await Recipe.create(recipeData);
+    res.json(recipe);
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+});
+
 //SHOW ROUTE: GET: "/"
-app.get("/:id", async(req, res)=>{
-    try{
-        id = req.params.id
-        // get a Recipe from DataBase
-        const recipe = await Recipe.findById(id)
-        // return a recipe as Json
-        res.json(recipe)
-    }
-    catch(error){
-        res.status(400).json({error})
-    }
-})
+app.get("/:id", async (req, res) => {
+  try {
+    id = req.params.id;
+    // get a Recipe from DataBase
+    const recipe = await Recipe.findById(id);
+    // return a recipe as Json
+    res.json(recipe);
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+});
 
 //Update Route: PUT: "/:id:
-app.put("/:id", async (req, res)=>{
-    try{
-        // update the person
-        const recipe= await Recipe.findByIdAndUpdate(req.params.id, req.body,{new: true})
-        // send the updated recipe as json
-        res.json(recipe)
-    }
-    catch(error){
-        res.status(400).json({error})
-    }
-})
+app.put("/:id", async (req, res) => {
+  try {
+    // update the person
+    const recipe = await Recipe.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    // send the updated recipe as json
+    res.json(recipe);
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+});
 
 // DESTROY-> DELETE - /:id - delete a Individual Recipe:
-app.delete("/:id", async (req, res)=>{
-    try{
-        const recipe = await Recipe.findByIdAndDelete(req.params.id)
-        // send deleted recipe as Json
-        res.status(204).json(recipe)
-    }
-    catch(error){
-        res.status(400).json({error})
-    }
-})
-
+app.delete("/:id", async (req, res) => {
+  try {
+    const recipe = await Recipe.findByIdAndDelete(req.params.id);
+    // send deleted recipe as Json
+    res.status(204).json(recipe);
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+});
 
 //////////////////////////////////////////////////////////////AUTHORIZATION ROUTES
 // signup route
@@ -191,7 +189,7 @@ app.delete("/:id", async (req, res)=>{
 //             domain: "localhost",
 //             //secure = only send cookie over https
 //             secure: false,
-//             // samsite = only send cookie if the request is coming fro the same orign 
+//             // samsite = only send cookie if the request is coming fro the same orign
 //             sameSite: 'lax',
 //             maxAge: 3600000, // 1 hour
 //         });
@@ -202,7 +200,6 @@ app.delete("/:id", async (req, res)=>{
 //     }
 // })
 
-
 // // logout route to clear cookie
 // app.get('/logout', (req, res) => {
 //     res.clearCookie('token');
@@ -210,6 +207,6 @@ app.delete("/:id", async (req, res)=>{
 // })
 
 //////////////////////////////////////////////////////////////// Server PORT:
-app.listen(PORT, ()=>{
-    console.log(`lsitenting to port ${PORT}`);
-})
+app.listen(PORT, () => {
+  console.log(`lsitenting to port ${PORT}`);
+});
