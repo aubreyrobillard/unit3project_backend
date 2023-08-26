@@ -2,7 +2,7 @@
 
 - [**LINK TO BACKEND GITHUB**](https://github.com/aubreyrobillard/unit3project_backend)
 - [**LINK TO BACKEND GITHUB**](https://github.com/aubreyrobillard/unit3project_frontend)
-- [**LINK TO DEPLOYED WEBSITE**](render link)
+- [**LINK TO DEPLOYED WEBSITE**](https://tastetally-frontend.onrender.com)
 - [**LINK TO TRELLO**](https://trello.com/b/YqpBoM4H/unit-3-project)
 
 
@@ -80,3 +80,6 @@ Preview our app here! https://app.uizard.io/p/acad9e5d
 made with https://lucid.app.com
 
 ## Future Enhancements:
+
+- Authorized account access for users to create their personal profiles with their own recipes.
+- Use of an external API that allows users to search the web for recipes while in the app.
