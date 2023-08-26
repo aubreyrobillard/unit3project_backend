@@ -8,7 +8,8 @@ const app = express();
 // import mongoose:
 const mongoose = require("mongoose");
 // import cors"
-// const cors = require("cors");
+const cors = require("cors");
+
 //import morgan:
 const morgan = require("morgan");
 // bcrypt for password
@@ -74,6 +75,20 @@ app.use(morgan("dev"));
 // express functionality to recognize incoming request object as JSON objects:
 app.use(express.json());
 // app.use(cookieParser());
+
+app.use(cors());
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Methods",
+        "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+    );
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    next();
+});
 /////////////////////////////////////////////////////////////////ROUTES
 
 // INDEX: get:
