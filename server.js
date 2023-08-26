@@ -92,19 +92,24 @@ app.get("/", async (req, res) => {
     // res.send('line 95 backend')
   }
 });
+
 // CREATE ROUTE: POST: "/""
 app.post("/", async (req, res) => {
   try {
-    // add username to recipe body
-    // req.body.username = req.payload.username;
-    // create recipe:
-    const recipe = await Recipe.create(req.body);
-    // send created recipe:
+    const recipeData = req.body;
+    console.log(recipeData);
+    // Ensure star is parsed as a number
+    recipeData.star = recipeData.star;
+
+    console.log(recipeData.star);
+
+    const recipe = await Recipe.create(recipeData);
     res.json(recipe);
   } catch (error) {
     res.status(400).json({ error });
   }
 });
+
 //SHOW ROUTE: GET: "/"
 app.get("/:id", async (req, res) => {
   try {
